@@ -5,6 +5,9 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"os"
+
+	"github.com/joho/godotenv"
 )
 
 func homeRoute(w http.ResponseWriter, r *http.Request) {
@@ -39,5 +42,7 @@ func main() {
 	http.HandleFunc("/insertBook", insertBookRoute)
 	http.HandleFunc("/routes", handleRoute)
 
-	http.ListenAndServe(":8080", nil)
+	godotenv.Load(".env")
+
+	http.ListenAndServe(":"+os.Getenv("PORT"), nil)
 }
