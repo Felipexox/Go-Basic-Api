@@ -37,6 +37,7 @@ func main() {
 	http.HandleFunc("/", homeRoute)
 	http.HandleFunc("/allBooks", allBooksRoute)
 	http.HandleFunc("/insertBook", insertBookRoute)
+	http.HandleFunc("/routes", handleRoute)
 
 	http.ListenAndServe(":8080", nil)
 }
