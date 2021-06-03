@@ -25,6 +25,7 @@ var books []Book
 func allBooksRoute(w http.ResponseWriter, r *http.Request) {
 
 	fmt.Fprint(w, "All Books Route ")
+	fmt.Fprint(w, books)
 }
 
 func insertBookRoute(w http.ResponseWriter, r *http.Request) {
